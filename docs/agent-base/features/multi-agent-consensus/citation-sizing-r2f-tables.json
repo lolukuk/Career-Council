@@ -1,0 +1,91 @@
+{
+  "kind": "SYNTHETIC byte-only three-round fixture, NOT model outputs/advice/semantic proof; all actual initial positions, source citations and exact caveat conditions retained. Other proposal/vote prose explicitly synthetic.",
+  "source_trace": "8ee57ef138fe450bbd87a06057779b44",
+  "cap": 32768,
+  "rows": [
+    {
+      "version": 1,
+      "stage": "draft",
+      "persona": "coordinator",
+      "bytes": 23645,
+      "repair_bytes": 23974,
+      "evidence_chunks": 14,
+      "roundtrip": true
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "peter_thiel",
+      "bytes": 27004,
+      "repair_bytes": 27276,
+      "evidence_chunks": 14,
+      "roundtrip": true
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "warren_buffett",
+      "bytes": 26870,
+      "repair_bytes": 27142,
+      "evidence_chunks": 14,
+      "roundtrip": true
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "robert_reich",
+      "bytes": 26974,
+      "repair_bytes": 27246,
+      "evidence_chunks": 14,
+      "roundtrip": true
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "nassim_nicholas_taleb",
+      "bytes": 27022,
+      "repair_bytes": 27294,
+      "evidence_chunks": 14,
+      "roundtrip": true
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "marcus_aurelius",
+      "bytes": 26895,
+      "repair_bytes": 27167,
+      "evidence_chunks": 14,
+      "roundtrip": true
+    }
+  ],
+  "actual_old_after_tables_bytes": 50394,
+  "actual_old_tables_roundtrip": true,
+  "actual_old_stop": "context_overflow: pinned closure",
+  "failure": {
+    "version": 2,
+    "stage": "draft",
+    "bytes": 34037,
+    "schema_bytes": 3189,
+    "parts": {
+      "conflicts": 4,
+      "coverage": 181,
+      "decision": 3152,
+      "evidence": 8031,
+      "evidence_sources": 310,
+      "feedback_layout": 224,
+      "obligations": 832,
+      "persona_frameworks": 252,
+      "positions": 6181,
+      "previous_votes": 5483,
+      "question": 132,
+      "snapshot_id": 70,
+      "vote_conditions": 606,
+      "vote_targets": 264,
+      "~context_tables": 3
+    }
+  },
+  "result": "FAIL Incomplete: context_overflow: pinned closure",
+  "obligations_after_fixture": 5,
+  "max_bytes": 27022,
+  "max_repair_bytes": 27294
+}

@@ -1,0 +1,88 @@
+# Live continuation — 2026-10-09
+
+Пользователь заполнил локальные настройки и явно попросил продолжить план. Selected provider AI Tunnel, exact model gpt-6-luna-pro. Ключ не выводился и не переписывался; только LLM_PROVIDER приведён сAITUNNEL кaitunnel, остальные bytes файла сохранены. Direct OpenAI key отсутствует; прямой OpenAI live не проверяется и не получает чужой ключ.
+
+## Ограниченный исходный запуск
+
+Команда `.venv-consensus/Scripts/python.exe -X utf8 -m council.main --mode model` — exit1, failed/provider_output_token_budget. Артефакт: `council/output/b76e097ba55746d382d29ce3cb245617/report.md`, соседний trace.json. Реальные89 sources/298 chunks, preparation1.22s, discussion50.84s,5 initial attempts, без принятых positions/decision. Один полученный ответ: input29295/output3753 tokens, model совпадает, сообщённый cost_rub0.82. Остальные отменённые запросы имеют неизвестный расход; это не полный денежный итог. Запрос содержал max_tokens2000; overbudget guard отказал, false consensus не возник.
+
+## Минимальная compatibility correction
+
+[AI Tunnel parameters](https://aitunnel.ru/docs/parameters) документирует max_completion_tokens для новых OpenAI; тот же документ обещает автоматический перевод max_tokens на прямом маршруте. Поэтому замена поля — проверяемое улучшение совместимости, **не доказанная причина** исходного превышения. Public catalog selected model provider=openai.
+
+Адаптер сохраняет upstream_provider из public metadata; AI Tunnel/OpenAI route передаёт только max_completion_tokens2000, другие upstream — только max_tokens2000. Общий guard completion_tokens≤2000, включая reasoning, не ослаблен. Defaults reasoning/model, context/round/deadline budgets не менялись, fallback нет. Fixture rejects output3753 для обоих адаптеров; field-exclusive fixtures проверяют OpenAI/Anthropic routes.
+
+Full check после исправления: `.venv-consensus/Scripts/python.exe -m pytest council/tests -q` → **exit0,107 passed12.17s**, actual native/dense/protocol cases включены. Исторические103 pass/PI06 preserved.
+
+## Синтетический реальный smoke
+
+Один короткий запрос с boolean JSON schema, без досье, тот же exact selected model, резерв2000, timeout45s, metadata preparation≤30s. **exit0/PASS**: requested/returned model совпал, input1574/output61 tokens, reported cost_rub0.04, одна generation dispatch. Артефакт: `council/output/live-smoke-b1caef4119d645f1a88bde071f3c6439/metadata.json` (санитизированные metadata, без ключа/dossier/raw response). Доказывает connectivity/schema/usage для одного маленького запроса; не гарантирует hard cap всех ответов и не доказывает качество пяти персон.
+
+## Повтор полного запуска
+
+После green suite и smoke повторена та же model CLI команда с исправленным wire field, прежними rounds3/attempts50/45s/600s/Request32768bytes. **exit1, failed/provider_output_token_budget**. Report: `council/output/648fa815b0bd48e6897f6aa21e7bc9a6/report.md`, соседний trace. Preparation1.04s/discussion28.97s,5 initial attempts; без positions/decision. Один полученный rejected ответ input29178/output3692, cost_rub0.81. Следовательно, замена cap field **не устранила** observed gateway excess; synthetic smoke не доказал hard enforcement. Расход прочих отменённых запросов неизвестен.
+
+## Альтернативный ограниченный профиль
+
+После двух неудачных полных запусков тот же подход не повторяется. [AIT reasoning](https://aitunnel.ru/docs/reasoning) документирует `none` для GPT-6 Luna, даже при отдельном pro mode; [OpenAI reasoning](https://developers.openai.com/api/docs/guides/reasoning) отмечает зависимость поддержки от модели. Добавлено необязательное LLM_REASONING_EFFORT/CLI --reasoning-effort, без default override: пустое поле сохраняет поведение модели. Значение проходит enum validation, входит в snapshot/trace/report, используется в одном frozen wire body OpenAI count+generation. Неподдерживаемое значение terminal, не fallback. Прежний2000 guard и локальные DTO/rationale/consensus constraints сохранены.
+
+Full после этого delta: `.venv-consensus/Scripts/python.exe -m pytest council/tests -q` → **exit0,110 passed11.98s**. Existing independent reviewer проверяет оба delta; verdict pending final evidence.
+
+Для проверки **процесса**, с объявленной иной характеристикой reasoning, выполнено `.venv-consensus/Scripts/python.exe -X utf8 -m council.main --mode model --reasoning-effort none`. Selected model по-прежнему gpt-6-luna-pro; `.env` model/key/effort не изменялись. **exit1, failed/provider_output_token_budget**, 2212 output tokens, reported cost_rub0.68, input28281;5 initial attempts, без positions/decision. Артефакт `council/output/c354b3d8ab1c4b2fa74495e39819bb59/report.md`. Остальные отменённые расходы неизвестны. Ни default-pro успех, ни reasoning quality не заявляются.
+
+## Ограниченный output/context contract
+
+После третьего excess полный запуск не повторялся вслепую. Frozen system policy теперь явно сообщает общий output budget2000 (включая reasoning), рекомендует компактный полный JSON и запрещает ради краткости удалять обязательные проверки, возражения, конфликты, negative evidence или оговорки/соглашаться. Policy участвует в snapshot/trace digest и в измерении полного Request32768bytes. Это heuristic, не доказательство hard enforcement/semantic preservation. Full check: **exit0,110 passed88.05s**.
+
+Single-person diagnostic с реальным досье, тем же selected model и none,2 frozen attempts: output1622/1587, input27944/27909, reported cost0.57/0.42; оба отклонены локальным DTO. Артефакт `council/output/live-position-b54c6f7ee398410f8d6c543cb1cbb118/metadata.json`. Это не выполненный5-person barrier и не консенсус.
+
+Следующий однократный diagnostic: output1655/input27959, cost0.58, **schema criteria too_long**; safe issue type/location без raw DTO/error inputs. Артефакт `council/output/live-validation-936f03f3a0ee447fbe87b3f5643da400/metadata.json`. Подтверждённая причина: normalized transport schema удаляла maxItems4/minItems1, поэтому модель не видела ограничение критериев, сохранявшееся в local DTO.
+
+Исправление: исходные min/maxItems, min/maxLength и numeric bounds копируются в descriptions каждого normalized schema node, включая exact2 conflict citations и quote400. По [официальной документации OpenAI](https://developers.openai.com/api/docs/guides/structured-outputs) поддержка keywords различается для fine-tuned моделей; общий адаптер сохраняет совместимый subset, а descriptors явно информируют модель. Descriptions не являются provider enforcement; строгая original DTO/citation validation остаётся обязательной. Same deterministic schema применяется count+generation, wirecap сохранён. Existing regression assertions дополнены. Full check после delta: **exit0,110 passed31.27s**. Independent review: no material blocker, ожидает final evidence и live outcome.
+
+## Финальная граница текущей live проверки
+
+После bounds correction single diagnostic `council/output/live-validation-b942c4bdc1db4eaa8ccdc10c8db8b64a/metadata.json`: output1788/input28660/cost0.60, schema прошла, последующий local ValueError не позволил принять Position. Точная причина этого ValueError не установлена (citation/unique-ID checks); не приписываем его доказанной ошибке цитаты.
+
+Следующий однократный диагностический запрос сохранял бы schema-valid позицию и типы citation issues для локального исследования. Вместо этого transport guard раньше DTO остановил ответ: **exit1/provider_output_token_budget**, output2015/input28887/cost0.47, exact selected model, none, cap2000. Артефакт `council/output/live-validation-1e9d02c0bdd84313a007e3baa603ac62/metadata.json`. Никакой позиции/raw generation не принят/не сохранён как достоверный результат. Повтор прежнего подхода прекращён: heuristic brevity и none не обеспечивают соблюдение cap выбранным маршрутом. Бюджеты, ключи, модель в .env и guards не менялись.
+
+**Итог:** реальные credentials/connectivity/schema-smoke/usage подтверждены, но initial5 barrier/decision/review/consensus **не пройдены в live**. Actual offline current check110 pass31.27s exit0; исторические54/103/107/110 результаты не заменены новым quality claim. OpenAI adapter offline проверен, direct live unrun (его ключ не предоставлен). Автоматического переключения модели/провайдера и ослабления проверок нет.
+
+Следующий шаг требует пользовательского выбора другой exact model либо отдельного OpenAI ключа и провайдера; пользовательский async вопрос направлен, ответ ещё не получен. Допустимо принять текущий честный отчёт о неудачной live проверке. Увеличение согласованных2000/32768 limits не выполнено и не является неявным решением. Independent final live-delta review возвращён существующему reviewer, без paid calls/key access.
+
+
+PI07 implementation checkpoint /2026-10-09: independent design+serialplan PASS (handoffs/provider-review/live-result.md), user directly authorized AIT conditionaltest exception. Root implemented explicit --aitunnel-test-mode, Settings AIT-only bool, Capabilities strict/aitunnel_test, shared provider+runtime ceiling8000 vs requested2000, snapshot/trace/preparation profile and perattempt excess accounting, report test-only labeling. Strictdefault/OpenAI/body/model/refusal/DTO/citation/context/consensus/retry/time guards unchanged. Existing fixtures expanded for3753/8000/8001 and AITtest agree/revise/disagree, wrong-provider earlyreject. Exact current full check `.venv-consensus/Scripts/python.exe -m pytest council/tests -q`: exit0,117 passed33.30s (session38599). New actual real-dossier fullCLI withnone+AITtest flag session26669 running; no current liveposition/decision/consensus claim until terminal artifact. Existing reviewer code/final evidence review ongoing, no other agents/infrastructure.
+
+
+PI07 failedlive/repair checkpoint: first conditional-profile fullCLI session26669 exit1, report council/output/24399613e83e4ecf9c1561dc9520e10c/report.md;34.01s,10attempts,0positions/decisions, six received outputs2015/1865/1915/1909/1691/1823 (reported costs0.67/0.65/0.66/0.66/0.59/0.45), all localDTO/citation/ID validation rejected. Four cancelledattemptusage rows missing in this historicaltrace, costs unknown, notzero. Independentreview BLOCKED PI07-R01/P2 perattemptcancel audit; preserve originalfailure.
+
+Root cancellationrepair: runtime.call except asyncio.CancelledError records reserved attempt as acceptedfalse/unknown counts/excessnull/requested2000 and cancelled event before rethrow; no late result accepted/unboundedcleanup. Added one existing-file siblingfailure/cancelled4 regression requiring5attempts/events/usage bijection and noacceptedposition/decision.
+
+One AITtest single-person diagnostic council/output/live-validation-b07af0f0df8143d4aa230acfd80837b8/metadata.json: output2052/input28927/cost0.63, schema passed4criteria/5arguments, one exactquotationguardfailure. Diagnostic-position.json is expressly NOT an accepted Position; evidence.json supplies shown evidence for local inspection. Exactcause: model collapsed CRLF into space; whitespace-normalized quote matches but contiguous exact substring doesnot. POLICY now instructs copy punctuation/whitespace exactly, prefer singleline, nojoining/normalization, decodedJSONquote mustmatch; sourcebasisneedsrefs/assumptionnone. No automaticquote repair or loosenedcitationguard.
+
+Postrepair exact fullcheck `.venv-consensus/Scripts/python.exe -m pytest council/tests -q`: exit0,118 passed26.97s (session45838). Prior117/26.35 prompt-only run predates cancellationrepair, superseded notremoved. One current full real-dossier AITtest+none CLI session44982 running; actual finaloutcome and independentclosure pending.
+
+
+PI07 current terminal live result /2026-10-09: postrepair `.venv-consensus/Scripts/python.exe -X utf8 -m council.main --mode model --reasoning-effort none --aitunnel-test-mode` session44982 exit1. Artifact council/output/f03b53115da344e7a308909e9a7ea15a/report.md +trace.json. Actual37.13s,8attempts/events/usage rows withbijectiveattemptIDs,6received (input/output:28592/1656,28914/1894,28945/1892,29191/2183,29015/2046,28749/1741; reportedcosts0.59/0.62/0.62/0.65/0.63/0.44),2cancelledexplicitunknownrows. Known reported subtotal3.55rubles is NOT fullrunprice; two remote canceledcosts unknown. Every outputrequested2000, twoexcessflagsTrue, canceledflagsnull. AITtest admission ceiling8000 worked, nooverbudgetfailure.
+
+Peter/Warren singleinitial calls accepted; otherthree firstcalls rejectedValueError, Robert secondcall rejectedValueError, two remaining secondcalls cancelled. No completefivebarrier, so atomicinitial_positions remain0 anddecisions0. This is intentionalphaseisolation, notproofthose two responsesweren't individuallyvalid. Specificcause ofthese currentValueErrors not logged (citation/ID/JSONvalidation category), notassumedidentical to independentlydiagnosedCRLFcase. Statusfailed/RuntimeError protocol-source-modelfailure honestlyreported; no forcedapproval, fakepositions, declaredunanimity or livequalityscore. Currentprompt improvesstrictquotations but doesnotguaranteemodelcompliance.
+
+Current full118 passed26.97s exit0; independent reviewer owncancelregression1 passed0.80s exit0, finalPI07closurependingactualtraceinspection. Previous117PASS/cancelgapBLOCKED/history preserved. PI07implementation/currentboundedverification complete (actualliveunsuccessful permittedbyexplicitplanDoD); further same-model blindfullruns stopped. AI Tunnelconditionalprofile excludedfromprod; defaultAIstrict/directOpenAIstrict unchanged, directOpenAIliveunrunwithoutitskey. Existing acceptedprototype15 notrescinded; no requestfornewtechnology/extraagents or looseningprovenance/consensus.
+
+The earlier external model/provider choice question was answered by the user authorizing the conditional AIT test profile. It is superseded, not pending. No new provider/model/key is requested to deliver this current reviewed test profile and its truthful failed live report.
+
+
+PI07 final closure /2026-10-09: existing independent reviewer actual PASS recorded handoffs/provider-review/live-result.md/todo.md. PI07-R01 closed by own focused1 passed0.80s exit0, authorfull118 passed26.97s exit0 and independently inspected terminal f03trace8attempt/events/usage bijection/6known+2nullunknown/excess2183+2046/2individualaccepted/0atomicpositions/0decisions/failed. No remainingmaterialproductcorrection; implementation13 verification and14 independentreview completed. Live protocol FAIL acknowledged, never mislabeled no_consensus/quality orproductioncertification. ConditionalAIT exception authorized and delivered; oldexternalmodelchoice superseded.15 successor useracceptance remains separate, prioracceptedprototype preserved. Current report ready, no furtherpaidrepeat/code/check/install/publicationpendinginPI07.
+
+
+PI08 — current user diagnostic request2026-10-09: «Проверь почему не была получена позиция». Lightweight corrective diagnostic scope, no newstack/autonomy/agents/providerpolicy/consensusgate. Serialroot: inspect actualf03trace/runtime/report → safeerrorstage/category and accurate partialbarriercopy → current fullsuite → ONE boundedRobert directinitial diagnostic via existingCouncil.call(max2,45s,none,AITtest) → existingindependentreview. Broadfive-callpaidrepeats notneeded; no forcedvalidity/normalization/secret/errorbodylogging.
+
+Read-only confirmed originalf03trigger: Robert secondValueError exhausts2frozenattempts; barrier cancels pendingNassim/Marcus, Peter/Warrenindividualresponses accepted. self.positions assignment happensonly after fullfivebarrier, so oldreporthasnoPositionDTOsand incorrectly impliesbothvalidindividualresponses neverarrived. SpecificoldValueErrors cannotbe reconstructed fromtypeonlytrace; separatepriorCRLFdiagnostic is notproofcurrentRobertcause.
+
+Root diagnosticfix: eventvalidation_stage + whitelistvalidation_code, Pydanticbuilt-inerrortypeswithoutinputs/context/locations/messages. Exactdigest/substring predicatesunchanged, theirfixedValueErrors nowdistinguished. report saysvalid-but-uncommitted whereinitialaccepted eventexists, fixedhumanrejectiondetails ifsafecheckcodeexists; originalartifacts untouched. Currentfullcheckrunning after smallJSONDecodeErrorclassification correction and5newregressioncases (fourcause/secretfree,onepartialreport). PI08 independentreview dispatchedexistingreviewer, no paidkeyaccess. User requestauthorizes reversible diagnosticfix, no repeatedapprovalneeded.
+
+
+PI08 verification completed2026-10-09: current runtime/context diagnostic delta full123 passed24.62s exit0; independent P3 cancellation wording corrected with neutralcopy and existingreportfixture, focusedfinal1 passed0.93s exit0. ONE realRobert diagnostic passedfirstattempt, exactDTO/cites/IDs,output1765/input28785/cost0.60; artifact position-diagnosis-c9f61fa20a2f46c09142ff8efeea65b1 explicitdiagnostic_single_position, nofivebarrier/decision/consensus. Oldf03preciseValueErrorcause unrecorded/unrecoverable, notclaimedbynewsuccess. Confirmedoldmissing-positioncause isatomicbarriercommitafterfive, despite2acceptedindividualcalls. Reportandjournal correctedwithinexistingcontract. Detailed evidence position-diagnosis.md. Independentfinalclosurepending; no furtherpaidrepeat/modelchange/budget/guardweakening/codeworkplanned.
+
+
+PI08 finalclosure2026-10-09: existing reviewer actualfocusedPASS recordedhandoffs/provider-review/live-result.md/todo.md; PI08-R01/P3closed. Independently inspected newRobert safe metadata/trace verifiesonevalidinitial/0fullbarrier/0decisions; originalf03precisecauseunknown andfailedhistory retained. Authorruntime/context full123/24.62exit0 +copy-onlyaffected1/0.93exit0, no remainingmaterialcorrections. Requesteddiagnosis andsafejournal/reportfix complete; no liveconsensus/productionclaim.

@@ -1,0 +1,87 @@
+{
+  "kind": "SYNTHETIC byte-only 3-round fixture, NOT model output/advice/semantic proof; actual initialpositions/source citations and exact actual caveat conditions retained, other proposal/vote prose explicitly synthetic",
+  "source_trace": "8ee57ef138fe450bbd87a06057779b44",
+  "cap": 32768,
+  "actual_original_mandatory_bytes": 59287,
+  "actual_after_lossless_pack": 52798,
+  "actual_full_vote_roundtrip": true,
+  "old_actual_safe_stop": "Incomplete: context_overflow: pinned closure",
+  "rows": [
+    {
+      "version": 1,
+      "stage": "draft",
+      "bytes": 31720,
+      "repair_bytes": 32103
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "peter_thiel",
+      "bytes": 31558,
+      "repair_bytes": 31884
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "warren_buffett",
+      "bytes": 31706,
+      "repair_bytes": 32032
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "robert_reich",
+      "bytes": 31735,
+      "repair_bytes": 32061
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "nassim_nicholas_taleb",
+      "bytes": 31576,
+      "repair_bytes": 31902
+    },
+    {
+      "version": 1,
+      "stage": "review",
+      "persona": "marcus_aurelius",
+      "bytes": 31731,
+      "repair_bytes": 32057
+    },
+    {
+      "version": 1,
+      "stage": "fixture_vote_wire",
+      "persona": "marcus_aurelius",
+      "bytes": 2846
+    },
+    {
+      "version": 1,
+      "stage": "fixture_vote_wire",
+      "persona": "nassim_nicholas_taleb",
+      "bytes": 2985
+    },
+    {
+      "version": 1,
+      "stage": "fixture_vote_wire",
+      "persona": "peter_thiel",
+      "bytes": 3000
+    },
+    {
+      "version": 1,
+      "stage": "fixture_vote_wire",
+      "persona": "robert_reich",
+      "bytes": 2875
+    },
+    {
+      "version": 1,
+      "stage": "fixture_vote_wire",
+      "persona": "warren_buffett",
+      "bytes": 2844
+    },
+    {
+      "version": 2,
+      "stage": "draft",
+      "stop": "context_overflow: pinned closure"
+    }
+  ]
+}

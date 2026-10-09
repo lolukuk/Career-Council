@@ -1,0 +1,14 @@
+flowchart LR
+ API[Read-only Tasker API capture] --> S[Frozen source snapshot]
+ D[Corpus profile notes] --> S
+ S --> R[BM25 dense RRF]
+ R --> N[Note shortlist ≤20 and bounded selection]
+ N --> T[5 bounded typed Tasker tool loops]
+ T --> P[5 isolated initial positions]
+ P --> C[Coordinator immutable draft]
+ C --> V[5 isolated current-version reviews]
+ V --> G{Deterministic guard}
+ G -->|All five approve| Y[Consensus user report plus trace]
+ G -->|Objections and rounds remain| C
+ G -->|Round limit| X[No consensus plus dissent]
+ G -->|Invalid source model budget| F[Failed incomplete cancelled]

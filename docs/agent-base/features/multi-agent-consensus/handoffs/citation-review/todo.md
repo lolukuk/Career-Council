@@ -1,0 +1,96 @@
+# Citation review remaining work
+
+- [x] Independent current-state/three-live-trace design/plan review completed: PASS WITH RISK, no material design blocker.
+- [ ] CIT-R01: inspect request-local excerpt allow-list, distinct chunk/selectable-ID instructions, exact offsets/digest, common-review filtering and negative IDs/fallback rejection.
+- [ ] CIT-R02: inspect wire-schema/default restoration/resolution/original DTO ordering and nested Position/Proposal/Vote/strict conflict checks.
+- [ ] CIT-R03: inspect complete initial/draft/five-review/repair bytes and representative revision growth before paid execution; preserve32768 cap and frozen facts/claims/ledgers.
+- [ ] CIT-R04: inspect direct-support prompt and exact-but-irrelevant semantic refusal regression; keep live quality/full FR acceptance separate.
+- [ ] CIT-R05: inspect safe schema-derived citation path, bounded already-shown ID repair, fresh identities and unchanged call/deadline/byte limits.
+- [ ] Inspect author full existing suite exit0 plus required correct/incorrect ID and exact/inexact quote checks.
+- [ ] Independent actual final code/evidence review; no provider calls/credentials/install/product edits.
+- [ ] Full genuine live-report acceptance remains open; offline PASS is not complete product execution.
+- [ ] Revised retained input projection: exact span IDs must expose the original quoted text without orphan references or altered digest; source map must resolve every shown source_id.
+- [ ] Actual CIT-R03 blocker: saved-live2 new-projection pinned overflow reproduced by author; close with lossless context dedup and measured later-stage/repair bytes before paid calls.
+- [ ] CIT-F01/P2: exact chosen ID trace falsely reverse-maps identical excerpts at different offsets; author correction and current focused evidence required before final PASS.
+- [x] Reviewer independently ran focused25passed1.50s exit0 before final audit/source_id correction.
+- [x] Reviewer independently inspected saved historical draft31719/all five review32491–32661 sizing; targeted repair33116–33286 overflow remains explicit bounded refusal risk.
+
+## Final closure
+
+- [x] CIT-F01/P2 actual raw selected-offset audit correction independently inspected and current affected26passed1.55s exit0.
+- [x] CIT-R01–R02 request-local exact/provenance and wire→original-DTO guards independently reviewed.
+- [x] CIT-R03 demonstrated draft/all-five first-review overflow closed; historical repair capacity risk preserved as safe pre-dispatch refusal.
+- [x] CIT-R04–R05 direct-support refusal protocol and bounded secret-free repair independently reviewed.
+- [x] Independent actual final engineering review PASS WITH RISK; earlier BLOCKED finding preserved with disposition.
+- [ ] Root current full146 run exit0 required before paid call; this reviewer did not execute full suite or paid requests.
+- [ ] Genuine complete live report and original FR-1–FR-9 acceptance remain separate and open.
+- [x] Independently inspected new-budget live1 f0f30579 failure25attempts/0atomicpositions/0decisions; no full product success.
+- [x] Narrow opaque-ID+shown wire-enum correction design PASS WITH RISK; exact offending raw ID unknown.
+- [ ] Inspect opaque-ID stability/collision/unique old Citation matching, explicit source_span marker, request-specific enum after review intersection, current bytes and new fullsuite before live2.
+- [x] Independent actual opaque-enum v2 code correction PASS WITH RISK; affected28passed2.75s exit0; author fresh full148passed50.96s exit0 inspected as author evidence.
+- [x] Current v2 initial/historical-draft bytes and honest large-history review refusal inspected.
+- [ ] Remaining recommendation before paid2: record admissible whole-excerpt v2 five-position/proposal all-five-review/repair offline measurements; current v2 sizing artifact has no review rows.
+- [ ] Full genuine live report/FR acceptance remains open; failed first new live history preserved, at most two authorized full runs left.
+- [x] V2 representative all-five review/repair sizing recommendation closed by actual artifact inspection; fixture remains synthetic.
+- [x] Actual live2 independently inspected:5atomicpositions/1decision, incomplete review closure; no full report acceptance.
+- [x] Generation-only compact Position and initial/tools-only uncited observations narrow design PASS WITH RISK.
+- [ ] Final corrective actual code/schema/content sufficiency/source pinning/first-review-and-repair bytes/full suite review before last authorized live3.
+- [x] Role-specific peer criterion-check view narrow design PASS WITH RISK; own full criteria and all5 owner guard required.
+- [ ] CIT-D03/P2: preserve peer missing_data verbatim or lossless owner-tagged shared view; omission of uncertainty is not authorized by check ownership.
+- [ ] Compute source pinning before role projection; measure actual larger live2 coordinator shape/all5 reviews/repair after correction; current suite/final review before last paid run.
+- [x] CIT-D03/P2 closed: every peer uncertainty/counter retained; only non-owner criterion bodies omitted after full source pinning.
+- [x] Last stricter generation-byte/schema alias/uncited-tools corrective code independently inspected; current focused32passed4.40s exit0, author exact full152passed100.33s exit0.
+- [x] Actual live2 five-claim/two-caveat/four-step source footprint plus clearly synthetic compact cards review29320–29497/repair29951–30128 measured within32768; no old accepted state rewriting/live claim.
+- [x] Last-bundle independent engineering final PASS WITH RISK; no remaining material code finding.
+- [ ] Final genuine paid live3 outcome/report/semantic quality and FR-1–FR-9 acceptance remain open; root owns one remaining user-authorized full run.
+- [x] Independently inspected last authorized live10556af0:all5 initial byte guard failures/Reich repeated/0atomicPositions/0Decisions;3/3 paid exhausted.
+- [x] Canonical-whitespace hypothesis rejected for actual AIT path: ProviderAdapter already returns canonical restored wire JSON.
+- [x] Concrete offline recommendation recorded: safe byte/field metrics, field-specific bounded repair and moderate generation-only limits; no automatic essential-fact/citation removal or cap-readiness guarantee.
+- [ ] Root optional authorized offline diagnostic/bounds repair + current suite/final review; no paid calls.
+- [ ] FULL genuine scenario/report/FR acceptance remains blocked; no paid budget remains in current route.
+- [x] Post-budget offline numeric byte/field diagnostics and addressable safe repair/moderate generation bounds actual code PASS WITH RISK; no citation-count reduction or cap increase.
+- [x] New whitespace fixture missing stage key independently reproduced, corrected by author, current own focused34passed6.77s exit0.
+- [ ] Root current exact full-suite rerun after fixture correction exit0 required for offline delivery closure.
+- [ ] Genuine full report/FR acceptance remains BLOCKED; paid budget3/3 exhausted, no additional provider calls authorized.
+- [x] Root author exact full154passed58.87s exit0 closes prior offline full prerequisite; not reviewer rerun.
+- [x] Extra independently inspected live b8a17:5initial/1decision/0atomicvotes, allreview genericprotocol rejection; exact rejected rule unknowable.
+- [x] Early missing assumption-caveat guard plus safe fixed protocol error/repair categories narrow design PASS WITH RISK; dynamic vote enum deferred.
+- [ ] Inspect actual smaller code/tests/full current suite; preserve valid unsupported/object/abstain and all strict guards.
+- [ ] Genuine full report/FR acceptance remains blocked; extra separately user-authorized single attempt also spent, no paid budget left.
+- [x] Actual smaller protocol correction independently reviewed: assumption-linkage before Decision/reviews, fixed safe protocol codes/repair, strict validate_vote and valid dissent unchanged.
+- [x] Own current protocol+citation49passed15.51s exit0; no account-limit block or substitute designreview claim.
+- [ ] Root current exact full20448 exit0 required to close new offline delta; no paid calls.
+- [ ] Exact prior rejected-vote cause unknowable from preserved trace; full original live report/FR acceptance still open with no paid authorization remaining.
+- [x] Root author full159passed48.44s exit0 closes previous protocol-delta offline prerequisite.
+- [x] Independently inspected R2e:5atomicPositions/1Decision/5valid object votes, revision incomplete; no live consensus/full report.
+- [ ] CIT-RV01/P2: positive status alone cannot justify dropping unique qualification/rationale; preserve/dedup exact text or constrain new contract while keeping old trace/stress honestly distinct.
+- [ ] Review generation-only CompactVote and conservative material revision_feedback, full-original source pinning, exact ledger/caveat reuse, actual revision/next-review/repair bytes and current focused/full checks.
+- [ ] Original full-report/FR acceptance remains open; no further paid authorization.
+- [x] Refined R2f design PASS WITH RISK; CIT-RV01 resolved at design level by ALL priorvote rationale preservation/lossless packing.
+- [ ] Actual packing roundtrip/defaults/nulls/order/unique exact ledger fallback, prepacking sourcepinning and readable columns/refs code review.
+- [ ] New CompactVote/CompactProposal local bounds→unchanged internal DTO normalization, old600-char condition compatibility and valid dissent verification.
+- [ ] Actual old59k negative stress plus synthetic future full three-round mandatory/repair sizing/current full tests/independent final review.
+- [ ] Original full live report/FR acceptance remains open; no paid authorization.
+- [x] Actual R2f feedback/compact schema/runtime integration independently inspected; all priorvote rationale preserved, no code finding.
+- [x] Own unique/ambiguous Conflict ledger reference exact roundtrip counterexample PASS.
+- [ ] Correct new bound-test originalDTO assertion on WIRE q-citations using localshown resolution; first focused1failed58passed23.62s is preserved failure evidence.
+- [ ] Current corrected focused/full suite and actualold/future3round mandatory/repair sizing before final engineering closure.
+- [x] NEW generic readable column-table later-round INPUT-only design PASS WITH RISK; prior feedback/body-bound approaches author-measured insufficient.
+- [ ] Actual codec marker-before-unescape/sentinel/version/layout/columns/rows/keys/missing/default/null/array-order and fullpacket roundtrip review.
+- [ ] Same exact encoded double-JSON Request measure/base/repair; backend full sourcepin/catalog/enum unchanged; output never codec-decoded.
+- [ ] Full actual negative stress and declared future3round+allrepairs real-footprint sizing/current focused/full/independent code review; no paidscope.
+- [x] CIT-T01/P2 missing-sentinel numeric-equality gap reproduced and actual fix closed; own current packing19passed0.86s exit0.
+- [x] Combined packing/feedback/protocol/citation78passed38.18s before3newnegatives; q-wire/originalDTO fixture corrected and passes.
+- [x] Actual input-only codec measure/base/repair and original sourcepin/catalog/enum/output boundary independently reviewed; no remaining material code finding.
+- [ ] Latest generic-table real-footprint3round+repair sizing/current full after CIT-T01 needed; older failedv2sizing is not green evidence.
+- [x] Author full188passed54.55s closes prior codec full prerequisite; real/future measurements remain negative.
+- [x] Exact currentdecision/caveat reference+trailing-None-only row/policy redundancy narrow design PASS WITH RISK.
+- [ ] Actual explicit layout/null/default0False preservation, unique reference/fallback/foreign rejection and all-rule policy checklist review.
+- [ ] New complete real-footprint3round mandatory/repair sizing and current focused/full checks; no paid/cap changes.
+
+## Human-directed stop / retained checkpoint
+
+- [x] Human requested leave34037 and stop stronger optimization; root reverted proposed v2/null-tail/policy-condensation extension.
+- [x] Reviewer inspected retained feedback v1 strict6-column rows/fulltarget-condition pools and CIT-T01 fixed generic codec; author baseline188passed54.55s applies to retained behavior.
+- [x] No extra tests/paid calls performed; all proposed further optimization tasks above are DEFERRED at user's request.
+- [ ] Product full-report/FR acceptance remains OPEN: syntheticv2mandatory34037>32768 and oldactual50394 remain honest safe-overflow evidence; no paidauthorization.
