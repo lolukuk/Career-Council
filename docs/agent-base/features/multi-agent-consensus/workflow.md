@@ -1,3 +1,21 @@
+## Итог текущего продолжения — 2026-10-09
+
+Завершён реальный путь исходного вопроса → пять позиций → общий проект → пять валидных оценок → отчёт с разногласиями. Run `db37d3dc137a4969935f9f23a692bbf1`: **no_consensus, exit0**, 28 обращений, 69.022с, явный предел одного раунда, guard=false. Все 3 разрешённых полных запуска использованы. Последняя обязательная полная проверка: **188 passed28.94s, exit0**. Исходный user_prompt AST совпадает с Git HEAD council. Изменения локальные, без коммита/публикации.
+
+Независимая итоговая оценка **PASS WITH RISK**: FR-1 минимально подтверждён различными рамками и лексикой пяти персон (контраст тона умеренный); FR-2/FR-3 закрыты для завершённого однораундового отчёта с разногласиями. FR-4/FR-6 смысловая обоснованность текущих итоговых рекомендаций PASS WITH RISK; FR-5 фактические 15 отобранных заметок релевантны, бытовой шум исключён. FR-7–FR-9 текущий scope не меняет. Общая осторожная рекомендация не считается единогласным одобрением; все условия и возражения сохранены.
+
+Ограничения: в одном исходном аргументе Thiel возможное снижение начальной зарплаты не подтверждено выбранной финансовой цитатой; итог оставляет зарплату неизвестной. `v1/slow` сочетает факт темпа учёбы и предположение о пользе проекта под source; все пять оценили его qualified, условия сохранены. Не доказаны живой пересмотр, гарантированная устойчивость повторных запусков и актуальность мокового досье. Известная сумма трёх запусков26.60руб +2 неизвестных отменённых usage; это не полный денежный расход.
+
+Путь выполнения: CLI --max-rounds1..3, default3; однораундовый вывод поддерживает конечное содержательное разногласие без ослабления guards. Исправления длин текста и адресного model-repair прошли full check и независимое ревью. Автор root, единственный фактически привлечённый reviewer acceptance_review. Stages12–14 выполнены для ограниченного текущего outcome;15 — пользовательское принятие переданного результата.
+
+[Фактические запуски](acceptance-continuation.md) · [Независимая итоговая оценка](handoffs/acceptance-review/result.md).
+
+История ниже сохраняется.
+
+Latest2026-10-09: authorized live3/3 completed db37d3dc137a4969935f9f23a692bbf1 no_consensus exit0 with5positions1decision5validvotes, explicit1round. Full188passed28.94s; independent semantic/FR1 review pending. See [acceptance-continuation](acceptance-continuation.md). Earlier status below is historical.
+
+Current continuation 2026-10-09: user authorizes 3 full paid runs. Explicit one-round reviewed dissent report under existing guards; tests/code review pending, paid 0/3. See [acceptance-continuation](acceptance-continuation.md). Previous records below are historical.
+
 # Workflow 00–15 — multi-agent-consensus
 
 ## Зафиксированный итог по поручению пользователя — 2026-10-09

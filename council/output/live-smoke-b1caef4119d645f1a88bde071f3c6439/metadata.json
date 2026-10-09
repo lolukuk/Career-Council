@@ -1,0 +1,1 @@
+{"check":"one_synthetic_generation_no_dossier","metadata":{"cost_rub":0.04,"http_dispatches":1,"input_tokens":1574,"output_tokens":61,"preflight_count":null,"returned_model":"gpt-6-luna-pro"},"model":"gpt-6-luna-pro","output_limit":2000,"provider":"aitunnel","status":"passed"}

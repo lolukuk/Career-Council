@@ -1,0 +1,1 @@
+{"case":"single_position_validation_diagnostic","code":"provider_output_token_budget","error":"ProviderRequestError","layer":"transport","model":"gpt-6-luna-pro","output_limit":2000,"reasoning_effort":"none","status":"failed","usage":{"cost_rub":0.47,"http_dispatches":1,"input_tokens":28887,"output_tokens":2015,"preflight_count":null,"returned_model":"gpt-6-luna-pro"}}

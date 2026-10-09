@@ -1,3 +1,5 @@
+Current2026-10-09: completed original-input real1-round no_consensus exit0,5positions+1proposal+5validvotes. FR-1 minimal distinction; FR-2/3 complete; semantic FR-4/6 PASS WITH RISK, actual FR-5 relevance confirmed. Full188passed28.94s;3/3authorized paid runs consumed. [Итоговый отчёт](../council/output/db37d3dc137a4969935f9f23a692bbf1/report.md) · [Независимая оценка и ограничения](agent-base/features/multi-agent-consensus/handoffs/acceptance-review/result.md). Earlier checkpoints below are historical.
+
 # Оценка совета консультантов по описанию кейса
 
 Current retained R2f: user requested to leave the demonstrated SYNTHETIC34037-byte context and stop optimizing. Complete suite188passed54.55s; codec independent PASS WITH RISK/CIT-T01 fixed.32768 cap unchanged, sizing FAIL; no further paid call, full FR-1–FR-9 acceptance remains open. Exact history and artifacts: docs/agent-base/features/multi-agent-consensus/citation-stabilization.md.

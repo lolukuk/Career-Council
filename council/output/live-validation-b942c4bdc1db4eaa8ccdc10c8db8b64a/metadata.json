@@ -1,0 +1,1 @@
+{"case":"single_position_validation_diagnostic","code":null,"error":"ValueError","layer":"citation_or_transport","model":"gpt-6-luna-pro","output_limit":2000,"reasoning_effort":"none","status":"failed","usage":{"cost_rub":0.6,"http_dispatches":1,"input_tokens":28660,"output_tokens":1788,"preflight_count":null,"returned_model":"gpt-6-luna-pro"}}
